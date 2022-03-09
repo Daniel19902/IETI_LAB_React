@@ -1,10 +1,9 @@
 
-import logo from './logo.svg';
-import Stack from '@mui/material/Stack';
+
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import React, { Component, useState, useEffect } from "react";
-import { render } from 'react-dom';
+
 
 
 
@@ -16,28 +15,6 @@ function Longin () {
         password : null
         }
     )
-    let entre = false
-
-    const setEntre = function(){
-        alert("entre button")
-        entre = true
-    }
-
-    const [ token, setToken ] = useState(null);
-    useEffect(() =>{
-        if (entre){
-            alert("entre")
-            
-            fetch("http://localhost:8080/v1/users")
-                .then((response) => {
-                    // Just an example, it actually should set this token into a localStorage variable or some kind of global state.
-                    setToken(response.token);
-                    // Once the user have been authenticated the app will navigate to the landing page
-                    //navigate("/test");
-                })
-        }
-	}, [])
-   
 
     return(
         <div className="container">
@@ -58,12 +35,10 @@ function Longin () {
                 email : {credenciales.email}
                 password : {credenciales.password}
             </div>
-            <Button variant="contained" onClick={setEntre}>Sing In</Button>
+            <Button variant="contained" onClick={() => {} }>Sing In</Button>
         </div>
     )
 
-    
 }
-
 
 export default Longin
