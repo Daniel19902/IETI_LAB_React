@@ -1,20 +1,19 @@
 
-
+import '../App.css'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import React, { Component, useState, useEffect } from "react";
-
-
-
+import Connect from "./Connect";
+import { useNavigate } from "react-router-dom";
 
 function Longin () {
 
-    
     const [ credenciales, setCredenciales] = useState({
         email : null,
         password : null
         }
     )
+    const navigate = useNavigate();
 
     return(
         <div className="container">
@@ -35,10 +34,8 @@ function Longin () {
                 email : {credenciales.email}
                 password : {credenciales.password}
             </div>
-            <Button variant="contained" onClick={() => {} }>Sing In</Button>
+            <Button variant="contained" onClick={() => navigate('/Conectar/'+ credenciales.email+'/'+credenciales.password ,{replace: true})}>Sing In</Button>
         </div>
     )
-
 }
-
 export default Longin
