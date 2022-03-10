@@ -11,13 +11,13 @@ function App() {
       <Router>
         <div className="App">
             <Routes>
-                <Route path="/Login" element={<Longin></Longin>}> hola </Route>
+                <Route path="/Login" element={<Longin></Longin>} />
             </Routes>
             <Routes>
                 <Route path="/Conectar/:email/:password" element={<Connect></Connect>}> hola </Route>
             </Routes>
             <Routes>
-                <Route path="/Loby/:token" element={<Loby></Loby>}> hola </Route>
+                <Route path="/Loby" element={<Loby></Loby>}> hola </Route>
             </Routes>
 
         </div>
