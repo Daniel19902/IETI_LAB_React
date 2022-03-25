@@ -4,6 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Connect = (props) => {
+    
     const [token, setToken] = useState(null);
     const {email, password} = useParams();
     const navigate = useNavigate();
