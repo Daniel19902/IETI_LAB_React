@@ -33,7 +33,7 @@
       "prettier"
     ]
   },
-  "prettier": {},
+  "prettier":{},
   "browserslist": {
     "production": [
       ">0.2%",
