@@ -6,23 +6,17 @@ import { useNavigate } from "react-router-dom";
 
 const Loby = () =>{
 
-    const [data, setData] = useState( null);
+    const [data, setData] = useState(null);
     const {token} = useParams();
-    console.log(token);
-    const requestOptions = {
-        method: 'GET',
-        headers: {
-            "Authorization": "Bearer "+token, //Agregado
-        },
-    };
+    //console.log(token);
 
     useEffect(() => {
 
-        fetch("http://localhost:8080/v1/user", requestOptions)
+        fetch("http://localhost:8090/v1/task")
             .then(response => response.json())
             .then(data1 => {
-
-                setData(JSON.stringify(data1))
+                console.log(data1[0])
+                setData((data1[0]))
             });
 
 
@@ -31,7 +25,7 @@ const Loby = () =>{
 
     return(
         <div className= 'Container'>
-            <h1> Hola XD </h1>
+            <h1> TAKS </h1>
             <p> {data} </p>
         </div>
 

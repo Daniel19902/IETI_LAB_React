@@ -16,6 +16,13 @@ const Connect = (props) => {
     };
 
 
+    useEffect(()=>{
+        if(!token) return;
+        localStorage.setItem('token', JSON.stringify(token))
+        navigate("/Loby")
+    },[token])
+
+
 
     console.log(email)
     console.log(password)
@@ -25,13 +32,11 @@ const Connect = (props) => {
             .then(response => response.json())
             .then(data => {
                 setToken(data.token)
-                navigate("/Loby/"+token)
-
             });
 
 
 
-    });
+    },[]);
 
     return (
         <h1> </h1>

@@ -29,11 +29,8 @@ function Longin () {
                 onChange={event => setCredenciales({email: credenciales.email, password: event.target.value})}
             />
             <br/>
+
             <br/>
-            <div>
-                email : {credenciales.email}
-                password : {credenciales.password}
-            </div>
             <Button variant="contained" onClick={() => navigate('/Conectar/'+ credenciales.email+'/'+credenciales.password ,{replace: true})}>Sing In</Button>
         </div>
     )
